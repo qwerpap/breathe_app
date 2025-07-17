@@ -18,7 +18,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(gradient: AppColors.blueGradient),
+          decoration: BoxDecoration(gradient: AppColors.blueWhiteGradient),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

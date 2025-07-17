@@ -1,5 +1,6 @@
 import 'package:breathe_app/features/global/widgets/default_app_animation.dart';
-import 'package:breathe_app/theme/app_colors.dart';
+import 'package:breathe_app/theme/theme.dart';
+import 'package:breathe_app/theme/theme.dart' as AppColors;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,10 @@ class MenuCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final surfaceColor = theme.colorScheme.surface;
+    final onSurfaceColor = theme.colorScheme.onSurface;
+
     return DefaultAppAnimation(
       onTap: onPressed,
       builder:
@@ -26,7 +31,7 @@ class MenuCard extends StatelessWidget {
             height: 55,
             padding: const EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: surfaceColor,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.14),
@@ -45,17 +50,24 @@ class MenuCard extends StatelessWidget {
                       SvgPicture.asset(
                         svg!,
                         height: 20,
-                        color: AppColors.primaryColor,
+                        colorFilter: ColorFilter.mode(
+                          primaryColor,
+                          BlendMode.srcIn,
+                        ),
                       ),
                       const SizedBox(width: 8),
                     ],
-                    Text(title, style: Theme.of(context).textTheme.labelMedium),
+                    Text(
+                      title,
+                      style:
+                          textStyle ??
+                          theme.textTheme.labelMedium?.copyWith(
+                            color: onSurfaceColor,
+                          ),
+                    ),
                   ],
                 ),
-                const Icon(
-                  Icons.arrow_right_alt,
-                  color: AppColors.primaryColor,
-                ),
+                Icon(Icons.play_arrow, color: AppColors.primaryColor),
               ],
             ),
           ),

@@ -31,16 +31,7 @@ class _DefaultAppAnimationState extends State<DefaultAppAnimation> {
       onTapUp: _onTapUp,
       onTapCancel: _onTapCancel,
       behavior: HitTestBehavior.opaque,
-      child: AnimatedSwitcher(
-        duration: widget.duration,
-        transitionBuilder:
-            (child, animation) =>
-                FadeTransition(opacity: animation, child: child),
-        child: KeyedSubtree(
-          key: ValueKey(_isPressed),
-          child: widget.builder(_isPressed),
-        ),
-      ),
+      child: widget.builder(_isPressed),
     );
   }
 }

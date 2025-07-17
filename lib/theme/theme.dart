@@ -24,16 +24,21 @@ final darktTheme = ThemeData(
     seedColor: primaryColor,
     brightness: Brightness.dark,
   ),
-  // scaffoldBackgroundColor: AppColors.scaffoldBgDarkTheme,
+  scaffoldBackgroundColor: AppColors.scaffoldBgDarkTheme,
   appBarTheme: AppBarTheme(
     elevation: 0,
-    // backgroundColor: AppColors.scaffoldBgDarkTheme,
-    // surfaceTintColor: AppColors.scaffoldBgDarkTheme,
+    backgroundColor: AppColors.scaffoldBgDarkTheme,
+    surfaceTintColor: AppColors.scaffoldBgDarkTheme,
   ),
   textTheme: textTheme,
 );
 
 final textTheme = TextTheme(
+  headlineMedium: TextStyle(
+    fontFamily: 'SfPro',
+    fontSize: 36,
+    fontWeight: FontWeight.w600,
+  ),
   titleLarge: TextStyle(
     fontFamily: 'SfPro',
     fontSize: 28,
@@ -49,11 +54,7 @@ final textTheme = TextTheme(
     fontSize: 20,
     fontWeight: FontWeight.w400,
   ),
-  headlineMedium: TextStyle(
-    fontFamily: 'SfPro',
-    fontSize: 36,
-    fontWeight: FontWeight.w600,
-  ),
+
   labelLarge: TextStyle(
     fontFamily: 'SfPro',
     fontSize: 20,
@@ -63,6 +64,5 @@ final textTheme = TextTheme(
     fontFamily: 'SfPro',
     fontSize: 16,
     fontWeight: FontWeight.w400,
-    color: Colors.black,
   ),
 );

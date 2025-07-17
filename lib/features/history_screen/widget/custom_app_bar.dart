@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({super.key, required this.title});
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'History',
+              title,
               style: Theme.of(
                 context,
               ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w600),
@@ -26,8 +28,8 @@ class CustomAppBar extends StatelessWidget {
                   (isPressed) => SvgPicture.asset(
                     ImageSource.arrowBack,
                     height: 25,
-                    colorFilter: const ColorFilter.mode(
-                      Colors.black,
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).iconTheme.color ?? Colors.black,
                       BlendMode.srcIn,
                     ),
                   ),

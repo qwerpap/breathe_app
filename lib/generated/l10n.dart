@@ -69,9 +69,174 @@ class S {
     return Intl.message('Settings', name: 'settings', desc: '', args: []);
   }
 
-  /// `more`
+  /// `More`
   String get more {
-    return Intl.message('more', name: 'more', desc: '', args: []);
+    return Intl.message('More', name: 'more', desc: '', args: []);
+  }
+
+  /// `Breathe`
+  String get breathe {
+    return Intl.message('Breathe', name: 'breathe', desc: '', args: []);
+  }
+
+  /// `Exercises`
+  String get exercises {
+    return Intl.message('Exercises', name: 'exercises', desc: '', args: []);
+  }
+
+  /// `History`
+  String get history {
+    return Intl.message('History', name: 'history', desc: '', args: []);
+  }
+
+  /// `inhale`
+  String get inhale {
+    return Intl.message('inhale', name: 'inhale', desc: '', args: []);
+  }
+
+  /// `exhale`
+  String get exhale {
+    return Intl.message('exhale', name: 'exhale', desc: '', args: []);
+  }
+
+  /// `hold`
+  String get hold {
+    return Intl.message('hold', name: 'hold', desc: '', args: []);
+  }
+
+  /// `No history yet`
+  String get noHistoryYet {
+    return Intl.message(
+      'No history yet',
+      name: 'noHistoryYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear History`
+  String get clearHistory {
+    return Intl.message(
+      'Clear History',
+      name: 'clearHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The history is available\nonly to authorized users`
+  String get theHistoryIsAvailablenonlyToAuthorizedUsers {
+    return Intl.message(
+      'The history is available\\nonly to authorized users',
+      name: 'theHistoryIsAvailablenonlyToAuthorizedUsers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message('Completed', name: 'completed', desc: '', args: []);
+  }
+
+  /// `Duration`
+  String get duration {
+    return Intl.message('Duration', name: 'duration', desc: '', args: []);
+  }
+
+  /// `Select breathing Technique`
+  String get selectBreathingTechnique {
+    return Intl.message(
+      'Select breathing Technique',
+      name: 'selectBreathingTechnique',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{seconds} секунд`
+  String countdown(Object seconds) {
+    return Intl.message(
+      '$seconds секунд',
+      name: 'countdown',
+      desc: '',
+      args: [seconds],
+    );
+  }
+
+  /// `Tap to start`
+  String get tapToStart {
+    return Intl.message('Tap to start', name: 'tapToStart', desc: '', args: []);
+  }
+
+  /// `Start Breathe`
+  String get startBreathe {
+    return Intl.message(
+      'Start Breathe',
+      name: 'startBreathe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark theme`
+  String get darkTheme {
+    return Intl.message('Dark theme', name: 'darkTheme', desc: '', args: []);
+  }
+
+  /// `Sounds`
+  String get sounds {
+    return Intl.message('Sounds', name: 'sounds', desc: '', args: []);
+  }
+
+  /// `Notifications`
+  String get notifications {
+    return Intl.message(
+      'Notifications',
+      name: 'notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Haptics`
+  String get haptics {
+    return Intl.message('Haptics', name: 'haptics', desc: '', args: []);
+  }
+
+  /// `Share`
+  String get share {
+    return Intl.message('Share', name: 'share', desc: '', args: []);
+  }
+
+  /// `Review`
+  String get review {
+    return Intl.message('Review', name: 'review', desc: '', args: []);
+  }
+
+  /// `Contacts`
+  String get contacts {
+    return Intl.message('Contacts', name: 'contacts', desc: '', args: []);
+  }
+
+  /// `Report a Bag`
+  String get reportABag {
+    return Intl.message('Report a Bag', name: 'reportABag', desc: '', args: []);
+  }
+
+  /// `Website`
+  String get website {
+    return Intl.message('Website', name: 'website', desc: '', args: []);
+  }
+
+  /// `Well Done!`
+  String get wellDone {
+    return Intl.message('Well Done!', name: 'wellDone', desc: '', args: []);
+  }
+
+  /// `Again`
+  String get again {
+    return Intl.message('Again', name: 'again', desc: '', args: []);
   }
 }
 

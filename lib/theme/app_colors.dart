@@ -10,10 +10,18 @@ class AppColors {
   static const greyColor = Colors.grey;
 
   static const scaffoldBgLightTheme = Colors.white;
+  static const scaffoldBgDarkTheme = Colors.black;
 
-  static const blueGradient = LinearGradient(
+  static const blueWhiteGradient = LinearGradient(
     begin: Alignment.bottomCenter,
     end: Alignment.topCenter,
     colors: [primaryColor, whiteColor],
+  );
+
+  static const primaryGradiend = LinearGradient(
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+    colors: [primaryColor, primaryColor, secondaryColor],
+    stops: [0.0, 0.99, 1.0], 
   );
 }
