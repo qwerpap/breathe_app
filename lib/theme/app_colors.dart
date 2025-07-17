@@ -11,9 +11,9 @@ class AppColors {
 
   static const scaffoldBgLightTheme = Colors.white;
 
-  static const verticalGradient = LinearGradient(
+  static const blueGradient = LinearGradient(
     begin: Alignment.bottomCenter,
     end: Alignment.topCenter,
-    colors: [primaryColor, secondaryColor],
+    colors: [primaryColor, whiteColor],
   );
 }

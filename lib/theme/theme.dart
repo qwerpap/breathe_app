@@ -35,23 +35,34 @@ final darktTheme = ThemeData(
 
 final textTheme = TextTheme(
   titleLarge: TextStyle(
+    fontFamily: 'SfPro',
     fontSize: 28,
     fontWeight: FontWeight.w400,
-    color: AppColors.whiteColor,
   ),
   titleMedium: TextStyle(
+    fontFamily: 'SfPro',
     fontSize: 24,
     fontWeight: FontWeight.w400,
-    color: AppColors.whiteColor,
+  ),
+  titleSmall: TextStyle(
+    fontFamily: 'SfPro',
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
   ),
   headlineMedium: TextStyle(
+    fontFamily: 'SfPro',
     fontSize: 36,
     fontWeight: FontWeight.w600,
-    color: AppColors.whiteColor,
   ),
   labelLarge: TextStyle(
-    fontSize: 14,
+    fontFamily: 'SfPro',
+    fontSize: 20,
     fontWeight: FontWeight.w400,
-    color: AppColors.whiteColor,
+  ),
+  labelMedium: TextStyle(
+    fontFamily: 'SfPro',
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: Colors.black,
   ),
 );

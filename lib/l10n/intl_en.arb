@@ -1,4 +1,6 @@
 {
   "goodbye": "goodbye",
-  "hello": "hello"
+  "hello": "hello",
+  "settings": "Settings",
+  "more": "more"
 }

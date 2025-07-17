@@ -63,6 +63,16 @@ class S {
   String get hello {
     return Intl.message('hello', name: 'hello', desc: '', args: []);
   }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+  }
+
+  /// `more`
+  String get more {
+    return Intl.message('more', name: 'more', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

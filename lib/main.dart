@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:breathe_app/features/menu_screen/view/menu_screen.dart';
 import 'package:breathe_app/generated/l10n.dart';
+import 'package:breathe_app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: lightTheme,
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
