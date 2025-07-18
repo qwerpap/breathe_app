@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "154568266701",
+    "project_id": "pauseflow-e95a7",
+    "storage_bucket": "pauseflow-e95a7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154568266701:android:baa097384c4df9c4ddaa84",
+        "android_client_info": {
+          "package_name": "com.flowpause.breathe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2b3xUSnoqH_dhtxIGKBejZXKWYyW-blM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

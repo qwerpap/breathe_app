@@ -2,8 +2,10 @@ import 'dart:async';
 import 'package:breathe_app/features/global/bloc/toggle_theme_bloc.dart';
 import 'package:breathe_app/features/settings_screen/bloc/settgins_bloc.dart';
 import 'package:breathe_app/features/splash_screen/view/splash_screen.dart';
+import 'package:breathe_app/firebase_options.dart';
 import 'package:breathe_app/generated/l10n.dart';
 import 'package:breathe_app/theme/theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +13,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   final prefs = await SharedPreferences.getInstance();
   final isDark = prefs.getBool('isDarkTheme') ?? false;
