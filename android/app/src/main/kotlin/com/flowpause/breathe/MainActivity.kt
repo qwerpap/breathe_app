@@ -1,4 +1,4 @@
-package com.example.breathe_app
+package com.flowpause.breathe
 
 import io.flutter.embedding.android.FlutterActivity
 

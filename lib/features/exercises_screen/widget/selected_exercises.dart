@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:breathe_app/features/breathe_screen/data/models/breathe_model.dart';
 import 'package:breathe_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -40,11 +41,18 @@ class SelectedExercises extends StatelessWidget {
                   Icons.arrow_drop_down,
                   color: AppColors.whiteColor,
                 ),
-                Text(
-                  techniques[selectedTechniqueIndex].name,
-                  style: theme.titleMedium?.copyWith(
-                    color: AppColors.whiteColor,
-                    fontWeight: FontWeight.w600,
+                const SizedBox(
+                  width: 8,
+                ), // чтобы был отступ между иконкой и текстом
+                Expanded(
+                  child: AutoSizeText(
+                    techniques[selectedTechniqueIndex].name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.titleMedium?.copyWith(
+                      color: AppColors.whiteColor,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ],

@@ -22,7 +22,8 @@ class BreatheScreen extends StatefulWidget {
 
 class _BreatheScreenState extends State<BreatheScreen> {
   int selectedTechniqueIndex = 0;
-  final List<BreatheModel> techniques = AppConstants.techniques;
+  late List<BreatheModel> techniques;
+
   String _currentPhase = '';
   int _countdown = 0;
   Duration _totalDuration = Duration.zero;
@@ -33,6 +34,12 @@ class _BreatheScreenState extends State<BreatheScreen> {
   DateTime? _sessionStart;
   bool _isBreathing = false;
   bool _shouldStop = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    techniques = AppConstants.getTechniques(context);
+  }
 
   void _startSessionTimer() {
     _sessionTimer?.cancel();
@@ -152,6 +159,9 @@ class _BreatheScreenState extends State<BreatheScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     final double circleSize = MediaQuery.of(context).size.height * 0.4;
+    if (techniques.isEmpty) {
+      return const Center(child: CircularProgressIndicator());
+    }
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),

@@ -19,11 +19,10 @@ class ExercisesScreen extends StatefulWidget {
 }
 
 class _ExercisesScreenState extends State<ExercisesScreen> {
-  final List<BreatheModel> techniques = AppConstants.techniques;
-
   int selectedTechniqueIndex = 0;
 
   void _showTechniquePicker() {
+    final techniques = AppConstants.getTechniques(context);
     showTechniquePicker(
       context: context,
       techniques: techniques,
@@ -39,7 +38,7 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
     final surfaceColor = theme.colorScheme.surface;
-    final onSurfaceColor = theme.colorScheme.onSurface;
+    final techniques = AppConstants.getTechniques(context);
     final step = techniques[selectedTechniqueIndex].steps.first;
     return Scaffold(
       appBar: PreferredSize(
@@ -47,7 +46,7 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
         child: CustomAppBar(title: S.of(context).exercises),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
           SelectedExercises(
             techniques: techniques,
@@ -77,19 +76,19 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
             child: Column(
               children: [
                 BreatheDetailsCard(
-                  title: 'Inhale',
+                  title: S.of(context).inhale,
                   svg: ImageSource.arrowUp,
                   duration: step.inhale,
                 ),
-                Divider(),
+                const Divider(),
                 BreatheDetailsCard(
-                  title: 'Hold',
+                  title: S.of(context).hold,
                   svg: ImageSource.arrowUp,
                   duration: step.hold,
                 ),
-                Divider(),
+                const Divider(),
                 BreatheDetailsCard(
-                  title: 'Exhale',
+                  title: S.of(context).exhale,
                   svg: ImageSource.arrowUp,
                   duration: step.exhale,
                 ),

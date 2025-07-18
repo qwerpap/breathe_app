@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:breathe_app/features/global/bloc/toggle_theme_bloc.dart';
-import 'package:breathe_app/features/menu_screen/view/menu_screen.dart';
 import 'package:breathe_app/features/settings_screen/bloc/settgins_bloc.dart';
+import 'package:breathe_app/features/splash_screen/view/splash_screen.dart';
 import 'package:breathe_app/generated/l10n.dart';
 import 'package:breathe_app/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -9,32 +9,23 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runZonedGuarded(
-    () async {
-      WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-      // Загрузка сохранённой темы
-      final prefs = await SharedPreferences.getInstance();
-      final isDark = prefs.getBool('isDarkTheme') ?? false;
-      final initialTheme = isDark ? darktTheme : lightTheme;
+  final prefs = await SharedPreferences.getInstance();
+  final isDark = prefs.getBool('isDarkTheme') ?? false;
+  final initialTheme = isDark ? darktTheme : lightTheme;
 
-      runApp(
-        MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create:
-                  (_) => ThemeBloc(initialTheme: initialTheme, isDark: isDark),
-            ),
-            BlocProvider(create: (_) => SettingsCubit()),
-          ],
-          child: const MyApp(),
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => ThemeBloc(initialTheme: initialTheme, isDark: isDark),
         ),
-      );
-    },
-    (error, stackTrace) {
-      print('Caught error: $error');
-    },
+        BlocProvider(create: (_) => SettingsCubit()),
+      ],
+      child: const MyApp(),
+    ),
   );
 }
 
@@ -62,7 +53,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _loadSavedLocale();
+    _loadSavedLocale(); // вызов загрузки сохранённой локали
   }
 
   Future<void> _loadSavedLocale() async {
@@ -80,7 +71,7 @@ class _MyAppState extends State<MyApp> {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: state.themeData,
-          locale: _locale, // <- ВАЖНО!
+          locale: _locale,
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -88,7 +79,7 @@ class _MyAppState extends State<MyApp> {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.delegate.supportedLocales,
-          home: const MenuScreen(),
+          home: const SplashScreen(),
         );
       },
     );

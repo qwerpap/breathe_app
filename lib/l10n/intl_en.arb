@@ -28,5 +28,15 @@
   "reportABag": "Report a Bag",
   "website": "Website",
   "wellDone": "Well Done!",
-  "again": "Again"
+  "again": "Again",
+  "technique_478_name": "4‑7‑8 (Relaxing Breath)",
+  "technique_478_description": "Simple yet powerful for unwinding, lowering stress, and supporting sleep. Balances your breathing pattern and activates the parasympathetic response to counter stress.\nPattern: Inhale 4s → Hold 7s → Exhale 8s.\nRepeat: 5 cycles.\nTotal time: ~1m 35s.",
+  "technique_12_name": "1:2 (Long Exhale)",
+  "technique_12_description": "A short inhale followed by an exhale twice as long gently engages the parasympathetic system and encourages relaxation. Useful under stress and before sleep.\nPattern: Inhale 4s → Exhale 8s.\nRepeat: 8 cycles.\nTotal time: ~1m 36s.",
+  "technique_rectangle_name": "Rectangle Breathing",
+  "technique_rectangle_description": "Longer inhales/exhales paired with brief breath‑holds help even out your breathing, ease tension, and support steady focus. A good steadying rhythm in challenging moments.\nPattern: Inhale 6s → Hold 3s → Exhale 6s → Hold 3s.\nRepeat: 5 cycles.\nTotal time: ~1m 30s.",
+  "technique_ujjayi_name": "Ujjayi",
+  "technique_ujjayi_description": "A traditional yogic method: slow nasal breathing with a light throat constriction that creates a soothing “ocean” sound. Deepens relaxation, sharpens concentration, and syncs breath with movement in yoga—great when you need to ground yourself.\nPattern: Inhale 5s → Exhale 5s.\nRepeat: 10 cycles.\nTotal time: ~1m 40s.",
+  "technique_box_name": "Box (Square) Breathing",
+  "technique_box_description": "Equal lengths for inhale, hold, exhale, hold. Stabilizes rhythm, calms the nervous system, and helps you regain control and concentration in stressful situations. The steady tempo feels meditative.\nPattern: Inhale 4s → Hold 4s → Exhale 4s → Hold 4s.\nRepeat: 5 cycles.\nTotal time: ~1m 20s."
 }

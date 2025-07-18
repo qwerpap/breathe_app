@@ -14,6 +14,14 @@ class LanguageDropdown extends StatelessWidget {
     'RU': Locale('ru'),
   };
 
+  //   final languageNames = {
+  //   'EN': 'English',
+  //   'SPA': 'Español',
+  //   'DE': 'Deutsch',
+  //   'FR': 'Français',
+  //   'RU': 'Русский',
+  // };
+
   @override
   Widget build(BuildContext context) {
     final currentLocale = Localizations.localeOf(context);
