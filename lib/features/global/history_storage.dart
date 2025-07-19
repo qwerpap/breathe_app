@@ -1,4 +1,4 @@
-import 'package:breathe_app/features/history_screen/data/breathing_history.dart';
+import 'package:breathe_app/features/history_screen/models/breathing_history.dart';
 
 class HistoryStorage {
   static final HistoryStorage _instance = HistoryStorage._internal();

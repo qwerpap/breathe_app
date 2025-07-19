@@ -1,13 +1,18 @@
-import 'package:breathe_app/constants/image_source.dart';
 import 'package:breathe_app/features/global/widgets/default_app_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../theme/app_colors.dart';
 
 class MoreCard extends StatelessWidget {
-  const MoreCard({super.key, required this.title, required this.onPressed});
+  const MoreCard({
+    super.key,
+    required this.title,
+    required this.svg,
+    required this.onPressed,
+  });
 
   final String title;
+  final String svg;
   final VoidCallback onPressed;
 
   @override
@@ -19,7 +24,7 @@ class MoreCard extends StatelessWidget {
       child: Row(
         children: [
           SvgPicture.asset(
-            ImageSource.logoSvg,
+            svg,
             height: 18,
             color: AppColors.primaryColor,
           ),

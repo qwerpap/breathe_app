@@ -350,10 +350,10 @@ class S {
     );
   }
 
-  /// `4‑7‑8 (Relaxing Breath)`
+  /// `4‑7‑8`
   String get technique_478_name {
     return Intl.message(
-      '4‑7‑8 (Relaxing Breath)',
+      '4‑7‑8',
       name: 'technique_478_name',
       desc: '',
       args: [],
@@ -370,10 +370,10 @@ class S {
     );
   }
 
-  /// `1:2 (Long Exhale)`
+  /// `1:2`
   String get technique_12_name {
     return Intl.message(
-      '1:2 (Long Exhale)',
+      '1:2',
       name: 'technique_12_name',
       desc: '',
       args: [],
@@ -430,10 +430,10 @@ class S {
     );
   }
 
-  /// `Box (Square) Breathing`
+  /// `Box Breathing`
   String get technique_box_name {
     return Intl.message(
-      'Box (Square) Breathing',
+      'Box Breathing',
       name: 'technique_box_name',
       desc: '',
       args: [],

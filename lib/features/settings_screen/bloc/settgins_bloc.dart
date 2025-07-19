@@ -29,7 +29,7 @@ class SettingsCubit extends Cubit<SettingsState> {
       : super(const SettingsState(
           sounds: true, // включено по умолчанию
           notifications: false,
-          haptics: false,
+          haptics: true,
         ));
 
   void toggleSounds(bool value) => emit(state.copyWith(sounds: value));

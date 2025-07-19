@@ -54,16 +54,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "tapToStart": MessageLookupByLibrary.simpleMessage("Tap to start"),
         "technique_12_description": MessageLookupByLibrary.simpleMessage(
             "A short inhale followed by an exhale twice as long gently engages the parasympathetic system and encourages relaxation. Useful under stress and before sleep.\nPattern: Inhale 4s → Exhale 8s.\nRepeat: 8 cycles.\nTotal time: ~1m 36s."),
-        "technique_12_name":
-            MessageLookupByLibrary.simpleMessage("1:2 (Long Exhale)"),
+        "technique_12_name": MessageLookupByLibrary.simpleMessage("1:2"),
         "technique_478_description": MessageLookupByLibrary.simpleMessage(
             "Simple yet powerful for unwinding, lowering stress, and supporting sleep. Balances your breathing pattern and activates the parasympathetic response to counter stress.\nPattern: Inhale 4s → Hold 7s → Exhale 8s.\nRepeat: 5 cycles.\nTotal time: ~1m 35s."),
-        "technique_478_name":
-            MessageLookupByLibrary.simpleMessage("4‑7‑8 (Relaxing Breath)"),
+        "technique_478_name": MessageLookupByLibrary.simpleMessage("4‑7‑8"),
         "technique_box_description": MessageLookupByLibrary.simpleMessage(
             "Equal lengths for inhale, hold, exhale, hold. Stabilizes rhythm, calms the nervous system, and helps you regain control and concentration in stressful situations. The steady tempo feels meditative.\nPattern: Inhale 4s → Hold 4s → Exhale 4s → Hold 4s.\nRepeat: 5 cycles.\nTotal time: ~1m 20s."),
         "technique_box_name":
-            MessageLookupByLibrary.simpleMessage("Box (Square) Breathing"),
+            MessageLookupByLibrary.simpleMessage("Box Breathing"),
         "technique_rectangle_description": MessageLookupByLibrary.simpleMessage(
             "Longer inhales/exhales paired with brief breath‑holds help even out your breathing, ease tension, and support steady focus. A good steadying rhythm in challenging moments.\nPattern: Inhale 6s → Hold 3s → Exhale 6s → Hold 3s.\nRepeat: 5 cycles.\nTotal time: ~1m 30s."),
         "technique_rectangle_name":

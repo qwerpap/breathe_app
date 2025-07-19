@@ -1,4 +1,5 @@
 import 'package:breathe_app/constants/app_constants.dart';
+import 'package:breathe_app/constants/image_source.dart';
 import 'package:breathe_app/features/history_screen/widget/custom_app_bar.dart';
 import 'package:breathe_app/features/more_screen/widget/more_card.dart';
 import 'package:breathe_app/generated/l10n.dart';
@@ -26,15 +27,35 @@ class _MoreScreenState extends State<MoreScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Divider(),
-            MoreCard(title: S.of(context).share, onPressed: () {}),
+            MoreCard(
+              title: S.of(context).share,
+              svg: ImageSource.share,
+              onPressed: () {},
+            ),
             Divider(),
-            MoreCard(title: S.of(context).review, onPressed: () {}),
+            MoreCard(
+              title: S.of(context).review,
+              svg: ImageSource.star,
+              onPressed: () {},
+            ),
             Divider(),
-            MoreCard(title: S.of(context).contacts, onPressed: () {}),
+            MoreCard(
+              title: S.of(context).contacts,
+              svg: ImageSource.contacts,
+              onPressed: () {},
+            ),
             Divider(),
-            MoreCard(title: S.of(context).reportABag, onPressed: () {}),
+            MoreCard(
+              title: S.of(context).reportABag,
+              svg: ImageSource.reportBag,
+              onPressed: () {},
+            ),
             Divider(),
-            MoreCard(title: S.of(context).website, onPressed: () {}),
+            MoreCard(
+              title: S.of(context).website,
+              svg: ImageSource.website,
+              onPressed: () {},
+            ),
             SizedBox(height: 26),
             Text(
               '${AppConstants.nameApp} ${AppConstants.versionApp}v',

@@ -1,15 +1,11 @@
-import 'dart:math';
-
 import 'package:breathe_app/constants/app_constants.dart';
 import 'package:breathe_app/constants/image_source.dart';
-import 'package:breathe_app/features/breathe_screen/data/models/breathe_model.dart';
 import 'package:breathe_app/features/exercises_screen/widget/breathe_details_card.dart';
 import 'package:breathe_app/features/exercises_screen/widget/selected_exercises.dart';
 import 'package:breathe_app/features/global/widgets/show_technique_picker.dart';
 import 'package:breathe_app/features/history_screen/widget/custom_app_bar.dart';
 import 'package:breathe_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class ExercisesScreen extends StatefulWidget {
   const ExercisesScreen({super.key});

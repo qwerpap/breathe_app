@@ -4,14 +4,19 @@ import 'package:breathe_app/features/breathe_screen/data/models/breathe_model.da
 import 'package:breathe_app/features/breathe_screen/widget/breathe_circle.dart';
 import 'package:breathe_app/features/breathe_screen/widget/breathe_start_button.dart';
 import 'package:breathe_app/features/breathe_screen/widget/custom_dialog.dart';
-import 'package:breathe_app/features/global/history_storage.dart';
 import 'package:breathe_app/features/global/utils/fortam_duration.dart';
 import 'package:breathe_app/features/global/widgets/show_technique_picker.dart';
-import 'package:breathe_app/features/history_screen/data/breathing_history.dart';
+import 'package:breathe_app/features/history_screen/breathe_database_helper.dart';
+import 'package:breathe_app/features/history_screen/database/breathe_items_database.dart';
+import 'package:breathe_app/features/history_screen/models/breathing_history.dart';
 import 'package:breathe_app/features/history_screen/widget/custom_app_bar.dart';
+import 'package:breathe_app/features/settings_screen/bloc/settgins_bloc.dart';
 import 'package:breathe_app/generated/l10n.dart';
 import 'package:breathe_app/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+import 'package:vibration/vibration.dart';
 
 class BreatheScreen extends StatefulWidget {
   const BreatheScreen({super.key});
@@ -34,6 +39,8 @@ class _BreatheScreenState extends State<BreatheScreen> {
   DateTime? _sessionStart;
   bool _isBreathing = false;
   bool _shouldStop = false;
+  bool _isVibrating = false;
+  final _dbHelper = BreathingDatabaseHelper(GetIt.I<AppDatabase>());
 
   @override
   void didChangeDependencies() {
@@ -99,7 +106,7 @@ class _BreatheScreenState extends State<BreatheScreen> {
     await Future.delayed(const Duration(milliseconds: 500));
     if (!mounted || _shouldStop) return;
 
-    HistoryStorage().add(
+    await _dbHelper.insertBreathingHistory(
       BreathingHistory(
         techniqueName: techniques[selectedTechniqueIndex].name,
         dateTime: DateTime.now(),
@@ -119,8 +126,55 @@ class _BreatheScreenState extends State<BreatheScreen> {
     _isBreathing = false;
   }
 
+  Future<void> startVibrationPhase({
+    required int seconds,
+    required bool increasing,
+    int steps = 10,
+    int vibrationDuration = 30,
+  }) async {
+    if (_isVibrating) return;
+    _isVibrating = true;
+
+    bool hasVibrator = false;
+    try {
+      hasVibrator = await Vibration.hasVibrator() ?? false;
+    } catch (_) {}
+
+    if (!hasVibrator) {
+      _isVibrating = false;
+      return;
+    }
+
+    final intervalMs = (seconds * 1000 ~/ steps);
+
+    for (int i = 0; i < steps; i++) {
+      if (_shouldStop || !mounted) break;
+
+      try {
+        Vibration.vibrate(duration: vibrationDuration);
+      } catch (_) {}
+
+      await Future.delayed(Duration(milliseconds: intervalMs));
+    }
+
+    _isVibrating = false;
+  }
+
   Future<void> _runPhase(String phase, int seconds) async {
     if (!mounted || _shouldStop) return;
+
+    bool hapticsEnabled = false;
+    try {
+      hapticsEnabled = context.read<SettingsCubit>().state.haptics;
+    } catch (_) {}
+
+    if (hapticsEnabled) {
+      if (phase == S.of(context).inhale) {
+        await startVibrationPhase(seconds: seconds, increasing: true);
+      } else if (phase == S.of(context).exhale) {
+        await startVibrationPhase(seconds: seconds, increasing: false);
+      }
+    }
 
     setState(() {
       _currentPhase = phase;
@@ -145,9 +199,11 @@ class _BreatheScreenState extends State<BreatheScreen> {
 
   @override
   void dispose() {
-    _shouldStop = true; // Останавливаем дыхание
+    _shouldStop = true;
     _stopUITimer();
     _stopSessionTimer();
+    Vibration.cancel();
+    _isVibrating = false;
     super.dispose();
   }
 

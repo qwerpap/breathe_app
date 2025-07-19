@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:breathe_app/features/global/bloc/toggle_theme_bloc.dart';
+import 'package:breathe_app/features/history_screen/database/breathe_items_database.dart';
 import 'package:breathe_app/features/settings_screen/bloc/settgins_bloc.dart';
 import 'package:breathe_app/features/splash_screen/view/splash_screen.dart';
 import 'package:breathe_app/firebase_options.dart';
@@ -9,10 +10,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+final getIt = GetIt.instance;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  getIt.registerSingleton<AppDatabase>(AppDatabase());
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 

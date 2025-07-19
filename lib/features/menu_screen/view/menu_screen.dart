@@ -1,7 +1,6 @@
 import 'package:breathe_app/constants/image_source.dart';
 import 'package:breathe_app/features/breathe_screen/view/breathe_screen.dart';
 import 'package:breathe_app/features/exercises_screen/view/exercises_screen.dart';
-import 'package:breathe_app/features/global/history_storage.dart';
 import 'package:breathe_app/features/history_screen/view/history_screen.dart';
 import 'package:breathe_app/features/menu_screen/widgets/language_dropdown.dart';
 import 'package:breathe_app/features/menu_screen/widgets/menu_app_bar.dart';
@@ -29,7 +28,7 @@ class MenuScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-LanguageDropdown(),
+                  LanguageDropdown(),
                   OtherMenuCard(
                     title: S.of(context).settings,
                     onPressed: () {
@@ -90,10 +89,7 @@ LanguageDropdown(),
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder:
-                              (context) => HistoryScreen(
-                                history: HistoryStorage().history,
-                              ),
+                          builder: (context) => const HistoryScreen(),
                         ),
                       );
                     },
