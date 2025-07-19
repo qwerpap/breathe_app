@@ -1,12 +1,10 @@
 import 'dart:async';
 import 'package:breathe_app/constants/app_constants.dart';
 import 'package:breathe_app/features/breathe_screen/data/models/breathe_model.dart';
-import 'package:breathe_app/features/breathe_screen/widget/breathe_circle.dart';
-import 'package:breathe_app/features/breathe_screen/widget/breathe_start_button.dart';
-import 'package:breathe_app/features/breathe_screen/widget/custom_dialog.dart';
+import 'package:breathe_app/features/breathe_screen/widget/widget.dart';
 import 'package:breathe_app/features/global/utils/fortam_duration.dart';
 import 'package:breathe_app/features/global/widgets/show_technique_picker.dart';
-import 'package:breathe_app/features/history_screen/breathe_database_helper.dart';
+import 'package:breathe_app/features/history_screen/database/breathe_database_helper.dart';
 import 'package:breathe_app/features/history_screen/database/breathe_items_database.dart';
 import 'package:breathe_app/features/history_screen/models/breathing_history.dart';
 import 'package:breathe_app/features/history_screen/widget/custom_app_bar.dart';
@@ -137,7 +135,7 @@ class _BreatheScreenState extends State<BreatheScreen> {
 
     bool hasVibrator = false;
     try {
-      hasVibrator = await Vibration.hasVibrator() ?? false;
+      hasVibrator = await Vibration.hasVibrator();
     } catch (_) {}
 
     if (!hasVibrator) {

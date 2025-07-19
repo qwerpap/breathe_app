@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:breathe_app/features/global/bloc/toggle_theme_bloc.dart';
 import 'package:breathe_app/features/history_screen/database/breathe_items_database.dart';
+import 'package:breathe_app/features/menu_screen/view/menu_screen.dart';
 import 'package:breathe_app/features/settings_screen/bloc/settgins_bloc.dart';
-import 'package:breathe_app/features/splash_screen/view/splash_screen.dart';
 import 'package:breathe_app/firebase_options.dart';
 import 'package:breathe_app/generated/l10n.dart';
 import 'package:breathe_app/theme/theme.dart';
@@ -87,7 +87,7 @@ class _MyAppState extends State<MyApp> {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.delegate.supportedLocales,
-          home: const SplashScreen(),
+          home: MenuScreen(),
         );
       },
     );

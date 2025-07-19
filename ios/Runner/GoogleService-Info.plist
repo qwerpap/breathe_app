@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>154568266701-1c192fpk9sll77ur6res7jpqn64tdo4k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.154568266701-1c192fpk9sll77ur6res7jpqn64tdo4k</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>154568266701-fibqi33d4uhvmsepef8o9cjlshf9vp75.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBtYbd-iEUH4tkO61avKiqX2Nlrm-uJ44o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>154568266701</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.flowpause.breathe</string>
+	<key>PROJECT_ID</key>
+	<string>pauseflow-e95a7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pauseflow-e95a7.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:154568266701:ios:0883ce2b2a59d389ddaa84</string>
+</dict>
+</plist>

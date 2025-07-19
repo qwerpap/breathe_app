@@ -9,4 +9,5 @@ class ImageSource {
   static const share = 'assets/svg/share.svg';
   static const star = 'assets/svg/star.svg';
   static const website = 'assets/svg/website.svg';
+  static const googleIcon = 'assets/svg/google_icon.svg';
 }
