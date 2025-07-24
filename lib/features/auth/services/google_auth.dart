@@ -3,7 +3,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseServices {
   final auth = FirebaseAuth.instance;
-
   final googleSignIn = GoogleSignIn();
 
   Future<bool> signInWithGoogle() async {
@@ -27,14 +26,16 @@ class FirebaseServices {
 
       return true;
     } on FirebaseAuthException catch (e) {
-      print(e.toString());
+      print('Firebase Auth Error: $e');
+      return false;
+    } catch (e) {
+      print('General Error: $e');
       return false;
     }
   }
 
-  googleSignOut() async {
+  Future<void> googleSignOut() async {
     await auth.signOut();
-
     await googleSignIn.signOut();
   }
 }

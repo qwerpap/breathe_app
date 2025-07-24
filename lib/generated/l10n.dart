@@ -449,6 +449,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Google Sign-In failed`
+  String get googleSigninFailed {
+    return Intl.message(
+      'Google Sign-In failed',
+      name: 'googleSigninFailed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

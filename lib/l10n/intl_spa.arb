@@ -26,5 +26,6 @@
   "reportABag": "Report a Bag",
   "website": "Website",
   "wellDone": "Well Done!",
-  "again": "Again"
+  "again": "Again",
+  "googleSigninFailed": "Google Sign-In failed"
 }

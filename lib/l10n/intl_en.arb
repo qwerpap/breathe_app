@@ -38,5 +38,6 @@
   "technique_ujjayi_name": "Ujjayi",
   "technique_ujjayi_description": "A traditional yogic method: slow nasal breathing with a light throat constriction that creates a soothing “ocean” sound. Deepens relaxation, sharpens concentration, and syncs breath with movement in yoga—great when you need to ground yourself.\nPattern: Inhale 5s → Exhale 5s.\nRepeat: 10 cycles.\nTotal time: ~1m 40s.",
   "technique_box_name": "Box Breathing",
-  "technique_box_description": "Equal lengths for inhale, hold, exhale, hold. Stabilizes rhythm, calms the nervous system, and helps you regain control and concentration in stressful situations. The steady tempo feels meditative.\nPattern: Inhale 4s → Hold 4s → Exhale 4s → Hold 4s.\nRepeat: 5 cycles.\nTotal time: ~1m 20s."
+  "technique_box_description": "Equal lengths for inhale, hold, exhale, hold. Stabilizes rhythm, calms the nervous system, and helps you regain control and concentration in stressful situations. The steady tempo feels meditative.\nPattern: Inhale 4s → Hold 4s → Exhale 4s → Hold 4s.\nRepeat: 5 cycles.\nTotal time: ~1m 20s.",
+  "googleSigninFailed": "Google Sign-In failed"
 }

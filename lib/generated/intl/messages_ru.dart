@@ -36,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "exercises": MessageLookupByLibrary.simpleMessage("Упражнения"),
         "exhale": MessageLookupByLibrary.simpleMessage("выдох"),
         "goodbye": MessageLookupByLibrary.simpleMessage("пока"),
+        "googleSigninFailed":
+            MessageLookupByLibrary.simpleMessage("Войти через Google"),
         "haptics": MessageLookupByLibrary.simpleMessage("Вибрация"),
         "hello": MessageLookupByLibrary.simpleMessage("привет"),
         "history": MessageLookupByLibrary.simpleMessage("История"),

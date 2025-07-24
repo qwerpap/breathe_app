@@ -53,7 +53,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
     } else {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(SnackBar(content: Text('Google Sign-In failed')));
+      ).showSnackBar(SnackBar(content: Text(S.of(context).googleSigninFailed)));
     }
   }
 
@@ -76,7 +76,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        S.of(context).theHistoryIsAvailablenonlyToAuthorizedUsers,
+                        S
+                            .of(context)
+                            .theHistoryIsAvailablenonlyToAuthorizedUsers,
                         style: Theme.of(context).textTheme.titleMedium,
                         textAlign: TextAlign.center,
                       ),

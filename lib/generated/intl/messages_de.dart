@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "duration": MessageLookupByLibrary.simpleMessage("Duration"),
         "exercises": MessageLookupByLibrary.simpleMessage("Exercises"),
         "exhale": MessageLookupByLibrary.simpleMessage("exhale"),
+        "googleSigninFailed":
+            MessageLookupByLibrary.simpleMessage("Google Sign-In failed"),
         "haptics": MessageLookupByLibrary.simpleMessage("Haptics"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
         "hold": MessageLookupByLibrary.simpleMessage("hold"),
