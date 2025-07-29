@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class AppConstants {
   static const nameApp = 'FlowPause';
-  static const versionApp = '1.0.0';
+  static const versionApp = '2.0.0';
 
   static List<BreatheModel> getTechniques(BuildContext context) {
     final s = S.of(context);
@@ -12,7 +12,13 @@ class AppConstants {
     return [
       BreatheModel(
         name: s.technique_478_name,
-        steps: [BreathStep(inhale: 4, hold: 7, exhale: 8)],
+        steps: [
+          BreathStep(inhale: 4, hold: 7, exhale: 8),
+          BreathStep(inhale: 4, hold: 7, exhale: 8),
+          BreathStep(inhale: 4, hold: 7, exhale: 8),
+          BreathStep(inhale: 4, hold: 7, exhale: 8),
+          BreathStep(inhale: 4, hold: 7, exhale: 8),
+        ],
         description: s.technique_478_description,
       ),
       BreatheModel(

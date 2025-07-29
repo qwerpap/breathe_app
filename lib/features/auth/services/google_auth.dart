@@ -5,6 +5,7 @@ class FirebaseServices {
   final auth = FirebaseAuth.instance;
   final googleSignIn = GoogleSignIn();
 
+  //google_sign_in
   Future<bool> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleSignInAccount =
@@ -38,4 +39,15 @@ class FirebaseServices {
     await auth.signOut();
     await googleSignIn.signOut();
   }
+
+  // //apple id
+  // Stream<User?> authStateChanges() => auth.authStateChanges();
+
+  // Future<UserCredential> signInWithApple() async {
+  //   try {
+  //     final appleCredential = await signInWithApple.getAppleIDCredential(scopes: [
+        
+  //     ]);
+  //   } catch(e) {}
+  // }
 }

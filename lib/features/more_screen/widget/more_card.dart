@@ -9,11 +9,13 @@ class MoreCard extends StatelessWidget {
     required this.title,
     required this.svg,
     required this.onPressed,
+    this.iconHeight = 18, // default 18
   });
 
   final String title;
   final String svg;
   final VoidCallback onPressed;
+  final double iconHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +25,7 @@ class MoreCard extends StatelessWidget {
       height: 45,
       child: Row(
         children: [
-          SvgPicture.asset(
-            svg,
-            height: 18,
-            color: AppColors.primaryColor,
-          ),
+          SvgPicture.asset(svg, height: iconHeight, color: AppColors.primaryColor),
           SizedBox(width: 8),
           DefaultAppAnimation(
             onTap: onPressed,
