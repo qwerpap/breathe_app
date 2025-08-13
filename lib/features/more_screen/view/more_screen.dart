@@ -1,6 +1,7 @@
 import 'package:breathe_app/constants/app_constants.dart';
 import 'package:breathe_app/constants/image_source.dart';
 import 'package:breathe_app/features/history_screen/widget/custom_app_bar.dart';
+import 'package:breathe_app/features/more_screen/view/privacy_policy_screen.dart';
 import 'package:breathe_app/features/more_screen/widget/more_card.dart';
 import 'package:breathe_app/generated/l10n.dart';
 import 'package:breathe_app/theme/app_colors.dart';
@@ -57,7 +58,7 @@ class _MoreScreenState extends State<MoreScreen> {
             MoreCard(
               title: S.of(context).contacts,
               svg: ImageSource.contacts,
-              iconHeight: 14, // например
+              iconHeight: 14, 
               onPressed: () {
                 _sendEmail(subject: 'Contact Support');
               },
@@ -74,15 +75,12 @@ class _MoreScreenState extends State<MoreScreen> {
             MoreCard(
               title: 'Privacy Policy',
               svg: ImageSource.website,
-              onPressed: () async {
-                const url =
-                    'https://docs.google.com/document/d/1sleKj_IYThOmvF1955eFRA8nbdipvmuXwWDSDgdzgsg/edit?usp=sharing';
-                final uri = Uri.parse(url);
-                if (await canLaunchUrl(uri)) {
-                  await launchUrl(uri, mode: LaunchMode.externalApplication);
-                } else {
-                  throw 'Could not launch $url';
-                }
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const PrivacyPolicyScreen(),
+                  ),
+                );
               },
             ),
             SizedBox(height: 26),

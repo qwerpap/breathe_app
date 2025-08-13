@@ -1,10 +1,13 @@
 import 'dart:async';
 import 'package:breathe_app/features/global/bloc/toggle_theme_bloc.dart';
+import 'package:breathe_app/features/global/services/firebase_messaging_service.dart';
+import 'package:breathe_app/features/global/services/local_notifications_service.dart';
 import 'package:breathe_app/features/history_screen/database/breathe_items_database.dart';
-import 'package:breathe_app/features/menu_screen/view/menu_screen.dart';
 import 'package:breathe_app/features/settings_screen/bloc/settgins_bloc.dart';
+import 'package:breathe_app/features/splash_screen/view/splash_screen.dart';
 import 'package:breathe_app/firebase_options.dart';
 import 'package:breathe_app/generated/l10n.dart';
+import 'package:breathe_app/supabase_config.dart';
 import 'package:breathe_app/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +15,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 final getIt = GetIt.instance;
 void main() async {
@@ -20,9 +24,24 @@ void main() async {
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
+  // Инициализация Supabase
+  await Supabase.initialize(
+    url: SupabaseConfig.supabaseUrl,
+    anonKey: SupabaseConfig.supabaseAnonKey,
+  );
+
   final prefs = await SharedPreferences.getInstance();
   final isDark = prefs.getBool('isDarkTheme') ?? false;
   final initialTheme = isDark ? darktTheme : lightTheme;
+
+  //notifications
+  final localNotificationsService = LocalNotificationsService.instance();
+  await localNotificationsService.init();
+
+  final firebaseMessagingService = FirebaseMessagingService.instance();
+  firebaseMessagingService.init(
+    localNotificationsService: localNotificationsService,
+  );
 
   runApp(
     MultiBlocProvider(
@@ -61,7 +80,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _loadSavedLocale(); // вызов загрузки сохранённой локали
+    _loadSavedLocale();
   }
 
   Future<void> _loadSavedLocale() async {
@@ -87,7 +106,7 @@ class _MyAppState extends State<MyApp> {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.delegate.supportedLocales,
-          home: MenuScreen(),
+          home: SplashScreen(),
         );
       },
     );

@@ -44,3 +44,9 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 keystore.properties
+
+# Environment and configuration files
+.env
+.env.local
+.env.production
+.env.staging
