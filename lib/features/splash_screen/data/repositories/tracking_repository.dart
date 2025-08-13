@@ -22,6 +22,7 @@ class TrackingRepository {
   Future<bool> isTrackerLinkValid(String url) async {
     try {
       final response = await http.get(Uri.parse(url));
+
       return response.statusCode >= 200 && response.statusCode < 400;
     } catch (e) {
       return false;
@@ -32,22 +33,22 @@ class TrackingRepository {
   //SUPABASE//SUPABASE//SUPABASE//SUPABASE//SUPABASE//SUPABASE//SUPABASE//SUPABASE
   Future<bool> sendTrackingData(Map<String, String> data) async {
     try {
-      final supabase = Supabase.instance.client;
+      // Skip if notification token is not provided
+      if (data['notificationToken'] == null) {
+        return true;
+      }
 
+      final supabase = Supabase.instance.client;
 
       // EXAMPLE EXAMPLE EXAMPLE
       // Предполагаем, что у вас есть таблица 'tracking_data' в Supabase
-      final response = await supabase
-          .from('tracking_data')
-          .insert({
-            'analytics_id': data['analyticsId'],
-            'notification_token': data['notificationToken'],
-            'app_name': data['appName'],
-            'tracker_token': data['trackerToken'],
-            'created_at': DateTime.now().toIso8601String(),
-          });
+      await supabase.from('clients').insert({
+        'firebase_token': data['notificationToken'],
+        'app_name': 'flow',
+        'campaign': data['trackerToken'],
+      });
 
-      return response.error == null;
+      return true;
     } catch (e) {
       print('Ошибка отправки данных в Supabase: $e');
       return false;

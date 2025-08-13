@@ -115,6 +115,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
     try {
       fcmToken = await FirebaseMessaging.instance.getToken() ?? '';
+
+      if (fcmToken.isEmpty != false) {
+        await FirebaseMessaging.instance.subscribeToTopic('initial');
+      }
     } catch (e) {
       debugPrint("Ошибка получения FCM токена: $e");
     }
@@ -138,9 +142,11 @@ class _SplashScreenState extends State<SplashScreen> {
     final uri = Uri.parse(baseUrl).replace(
       queryParameters: {
         "aid": params["analyticsId"] ?? '',
-        "cmid": params["notificationToken"] ?? '',
+        "fcm": params["notificationToken"] ?? '',
+        "app_name": "flow",
       },
     );
+
     return uri.toString();
   }
 

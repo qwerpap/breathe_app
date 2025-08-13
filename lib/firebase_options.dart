@@ -57,19 +57,19 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA2b3xUSnoqH_dhtxIGKBejZXKWYyW-blM',
-    appId: '1:154568266701:android:baa097384c4df9c4ddaa84',
-    messagingSenderId: '154568266701',
-    projectId: 'pauseflow-e95a7',
-    storageBucket: 'pauseflow-e95a7.firebasestorage.app',
+    apiKey: 'AIzaSyDdSji-TBuBBHc3R3AulxC0cTA_fns9Wxo',
+    appId: '1:572306661276:android:710cde793e43c89c78f259',
+    messagingSenderId: '572306661276',
+    projectId: 'flutter-flow-41998',
+    storageBucket: 'flutter-flow-41998.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBtYbd-iEUH4tkO61avKiqX2Nlrm-uJ44o',
-    appId: '1:154568266701:ios:bc434538ef628a88ddaa84',
-    messagingSenderId: '154568266701',
-    projectId: 'pauseflow-e95a7',
-    storageBucket: 'pauseflow-e95a7.firebasestorage.app',
-    iosBundleId: 'com.example.breatheApp',
+    apiKey: 'AIzaSyCXgf8q6FJnIVPoPS1svD0M9TG_DxX8dEA',
+    appId: '1:572306661276:ios:34544ed99ffbb87278f259',
+    messagingSenderId: '572306661276',
+    projectId: 'flutter-flow-41998',
+    storageBucket: 'flutter-flow-41998.firebasestorage.app',
+    iosBundleId: 'com.flowpause.breathe',
   );
 }

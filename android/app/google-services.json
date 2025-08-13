@@ -1,51 +1,26 @@
 {
   "project_info": {
-    "project_number": "154568266701",
-    "project_id": "pauseflow-e95a7",
-    "storage_bucket": "pauseflow-e95a7.firebasestorage.app"
+    "project_number": "572306661276",
+    "project_id": "flutter-flow-41998",
+    "storage_bucket": "flutter-flow-41998.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:154568266701:android:baa097384c4df9c4ddaa84",
+        "mobilesdk_app_id": "1:572306661276:android:710cde793e43c89c78f259",
         "android_client_info": {
           "package_name": "com.flowpause.breathe"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "154568266701-fibqi33d4uhvmsepef8o9cjlshf9vp75.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.flowpause.breathe",
-            "certificate_hash": "413563fb12316da4bf89fea09dbb33149687c5c8"
-          }
-        },
-        {
-          "client_id": "154568266701-vi4s1v0a36brmm1fsoe8f1nmk1g7qj2u.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA2b3xUSnoqH_dhtxIGKBejZXKWYyW-blM"
+          "current_key": "AIzaSyDdSji-TBuBBHc3R3AulxC0cTA_fns9Wxo"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "154568266701-vi4s1v0a36brmm1fsoe8f1nmk1g7qj2u.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "154568266701-1c192fpk9sll77ur6res7jpqn64tdo4k.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.flowpause.breathe"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
