@@ -18,7 +18,7 @@ final lightTheme = ThemeData(
   textTheme: textTheme,
 );
 
-final darktTheme = ThemeData(
+final darkTheme = ThemeData(
   primaryColor: primaryColor,
   colorScheme: ColorScheme.fromSeed(
     seedColor: primaryColor,

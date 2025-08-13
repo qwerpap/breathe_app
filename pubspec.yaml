@@ -31,6 +31,7 @@ dependencies:
   firebase_app_installations: ^0.3.3
   package_info_plus: ^8.3.0
   supabase_flutter: ^2.9.1
+  flutter_dotenv: ^5.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -52,6 +53,7 @@ flutter:
   - assets/png/
   - assets/svg/
   - assets/fonts/
+  - .env
   fonts:
   - family: SfPro
     fonts:

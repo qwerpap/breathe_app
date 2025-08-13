@@ -11,6 +11,7 @@ import 'package:breathe_app/supabase_config.dart';
 import 'package:breathe_app/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -20,6 +21,10 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 final getIt = GetIt.instance;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // dotenv
+  await dotenv.load(fileName: ".env");
+
   getIt.registerSingleton<AppDatabase>(AppDatabase());
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
@@ -32,7 +37,7 @@ void main() async {
 
   final prefs = await SharedPreferences.getInstance();
   final isDark = prefs.getBool('isDarkTheme') ?? false;
-  final initialTheme = isDark ? darktTheme : lightTheme;
+  final initialTheme = isDark ? darkTheme : lightTheme;
 
   //notifications
   final localNotificationsService = LocalNotificationsService.instance();

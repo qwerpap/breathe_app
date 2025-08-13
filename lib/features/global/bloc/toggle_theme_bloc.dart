@@ -19,7 +19,7 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
     : super(ThemeState(themeData: initialTheme, isDark: isDark)) {
     on<ToggleThemeEvent>((event, emit) async {
       final newIsDark = !state.isDark;
-      final newTheme = newIsDark ? darktTheme : lightTheme;
+      final newTheme = newIsDark ? darkTheme : lightTheme;
 
       // Сохраняем выбор
       final prefs = await SharedPreferences.getInstance();
